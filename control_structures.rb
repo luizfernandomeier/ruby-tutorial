@@ -35,3 +35,19 @@ while get_nil_if_zero(i)
   i -= 1
 end
 puts i
+
+# each loop
+animals = ['cat', 'dog']
+animals.each {|animal| print(animal, " ")}
+
+# times loop
+5.times {|i| print(i, " ")}
+puts
+
+# uptop loop
+5.upto(7) {|i| print(i, " ")}
+puts
+
+# sequence loop
+('a'..'z').each {|letter| print(letter, " ")}
+puts
