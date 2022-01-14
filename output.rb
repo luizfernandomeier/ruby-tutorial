@@ -8,3 +8,6 @@ def get_hello_message(name)
 end
 
 puts get_hello_message("World")
+
+# printf can control the ouput format - it adds a new line at the end
+printf("Number: %5.2f,\nString: %s\n", 1.2345, 'hello')
