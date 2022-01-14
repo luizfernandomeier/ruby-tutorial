@@ -1,4 +1,5 @@
 # method and argument names must use lowercase letters and underscores (snake_case)
+# method names can also end with the characters =, ! or ?
 
 # method with default argument
 def show_welcome_message(name, year=2010)
