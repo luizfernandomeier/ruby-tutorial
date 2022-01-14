@@ -5,3 +5,8 @@ local_name = "Meier"
 
 # constants must start with a capital letter and use CamelCase
 ConstantName = "this value can't be changed"
+
+# in ruby, nil is an actual object
+nil_a = nil
+nil_b = nil
+puts nil_a == nil_b # true
