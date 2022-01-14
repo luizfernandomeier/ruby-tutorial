@@ -18,10 +18,12 @@ class Song
     @name
   end
 
+  # methods with the equal sign on the name are elegible to appear on the left side of an assignment
   def name=(new_name)
     @name = new_name
   end
 
+  # override to_s
   def to_s
     "Song: #@name--#@artist (#@duration_seconds seconds)"
   end
