@@ -73,3 +73,18 @@ puts
 replaceable_array[3,2] = []
 print replaceable_array # 1, 3, dog, nil, 11
 puts
+
+# push
+replaceable_array.push(12)
+print replaceable_array # 1, 3, dog, nil, 11, 12
+puts
+
+# pop
+puts replaceable_array.pop # 12
+print replaceable_array # 1, 3, dog, nil, 11
+puts
+
+# shift
+puts replaceable_array.shift # 1
+print replaceable_array # 3, dog, nil, 11
+puts
