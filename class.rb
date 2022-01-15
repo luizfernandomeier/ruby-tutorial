@@ -119,3 +119,55 @@ end
 
 puts MyLogger.create.object_id
 puts MyLogger.create.object_id # prints the same id
+
+# access levels
+class SafeClass
+  # initialize is always private
+  def initialize
+    @gold_amount = 0
+  end
+
+  # public method
+  def public_method1
+  end
+
+  # all subsequent methods are protected
+  protected
+    def protected_method1
+    end
+
+    def protected_method2
+    end
+  
+  # all subsequent methods are private
+  private
+    def private_method1
+    end
+  
+  # all subsequent methods are public
+  public
+    def public_method2
+    end
+
+    def former_public_method3
+    end
+
+  # another way to change access levels
+  private :former_public_method3 # private_class_method only applies to the class, not the instance
+
+  attr_reader :gold_amount
+  protected :gold_amount # protected accessor getter
+  public def print_gold_amount(other_safe)
+    # here we can acess another instance's protected attribute
+    # this doesn't work on class methods
+    puts "I have #{other_safe.gold_amount} gold coins."
+  end
+
+  public def add_gold(amount)
+    @gold_amount += amount
+  end
+end
+
+full_safe = SafeClass.new
+full_safe.add_gold(100)
+SafeClass.new.print_gold_amount(full_safe)
