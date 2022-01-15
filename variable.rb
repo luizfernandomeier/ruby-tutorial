@@ -6,6 +6,9 @@ local_name = "Meier"
 # constants must start with a capital letter and use CamelCase
 ConstantName = "this value can't be changed"
 
+# check if a variable is defined
+puts defined?(non_existing_variable) == nil
+
 # parallel assignment
 parallel1, parallel2 = 1, 2
 
