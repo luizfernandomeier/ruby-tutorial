@@ -23,6 +23,15 @@ class Song
     @name = new_name
   end
 
+  # virtual attribute
+  def duration_minutes
+    @duration_seconds / 60.0 # force floating point
+  end
+
+  def duration_minutes=(new_duration_minutes)
+    @duration_seconds = (new_duration_minutes * 60).to_i
+  end
+
   # override to_s
   def to_s
     "Song: #@name--#@artist (#@duration_seconds seconds)"
@@ -37,6 +46,11 @@ puts bits_of_parrots.name # prints the attribute
 
 bits_of_parrots.artist = "Enemies"
 puts bits_of_parrots.artist
+
+# setting virtual attribute
+puts bits_of_parrots.duration_minutes # 4.066666666666666
+bits_of_parrots.duration_minutes = 5.5
+puts bits_of_parrots.duration_seconds # 330
 
 # inheritance
 class KaraokeSong < Song
