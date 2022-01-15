@@ -14,6 +14,9 @@ class TestSongList < Test::Unit::TestCase
     assert_equal(s3, list[2])
     assert_nil(list[4])
 
+    assert_equal(s2, list.with_title("title2"))
+    assert_nil(list.with_title("title5"))
+
     assert_equal(s1, list.delete_first)
     assert_equal(s2, list.delete_first)
     assert_equal(s4, list.delete_last)
