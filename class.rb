@@ -96,6 +96,30 @@ class SongList
   # class constant (static)
   MAX_TIME = 5 * 60
 
+  def initialize
+    @songs = Array.new
+  end
+
+  def append(song)
+    @songs.push(song)
+    self # it is a convention to return self to allow chaining
+  end
+
+  def delete_first
+    @songs.shift
+    self
+  end
+
+  def delete_last
+    @songs.pop
+    self
+  end
+
+  # implements an array like method on the class
+  def [](index)
+    @songs[index]
+  end
+
   # class method (static method)
   def SongList.is_too_long(song)
     song.duration_seconds > MAX_TIME
