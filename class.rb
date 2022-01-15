@@ -104,3 +104,18 @@ end
 
 puts SongList.is_too_long(Song.new('Stairway to Heaven', 'Led Zeppelin', 480)) # true
 puts SongList.is_too_long(Song.new('Blitzkrieg Bop', 'Ramones', 120)) # false
+
+# singleton class
+# this implementation of singleton is not thread safe
+class MyLogger
+  # makes new method private so that only the singleton class can create a new instance
+  private_class_method :new
+  @@logger = nil
+  def MyLogger.create
+    @@logger = new unless @@logger # unless makes the new method be called only if unless condition is false
+    @@logger
+  end
+end
+
+puts MyLogger.create.object_id
+puts MyLogger.create.object_id # prints the same id
