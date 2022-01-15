@@ -88,3 +88,14 @@ puts
 puts replaceable_array.shift # 1
 print replaceable_array # 3, dog, nil, 11
 puts
+
+# iterators
+replaceable_array.each do |element|
+  if element.to_s.length > 1
+    puts element
+    break
+  end
+end
+
+# returns the first element that matches the condition
+puts replaceable_array.find{|element| element.to_s.length > 1} # dog
