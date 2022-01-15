@@ -1,15 +1,33 @@
 # arrays can have multiple types
 multitype_array = [1, 'dog', "cat", 3.14, nil, true]
-puts multitype_array
+puts multitype_array.class # Array
+puts multitype_array.length # 6
+print multitype_array
+puts
 
 # first element
-puts multitype_array[0]
+puts multitype_array[0] # 1
 
 # last element
-puts multitype_array[multitype_array.length-1]
+puts multitype_array[multitype_array.length-1] # true
 
-# circle the array and come back to the first element
-puts multitype_array[multitype_array.length]
+# last element either (counting backwards)
+puts multitype_array[-1] # true
+
+# returns nil if index is out of bounds
+puts multitype_array[multitype_array.length] # nil
+
+# return a new array based on the interval [start, count]
+print multitype_array[1, 3]
+puts
+
+# return a new array based on the range [start, end] - .. means including the end position
+print multitype_array[1..3]
+puts
+
+# return a new array based on the range [start, end] - ... means excluding the end position
+print multitype_array[1...3]
+puts
 
 # change the second element
 multitype_array[1] = "doggo"
@@ -50,3 +68,36 @@ default_hash = Hash.new(0)
 puts default_hash['a'] # 0
 default_hash['a'] = 1
 puts default_hash['a'] # 1
+
+# another ways of starting an array
+array1 = Array.new
+puts "#{array1.class}[#{array1.length}]"
+
+array2 = []
+puts "#{array2.class}[#{array2.length}]"
+
+# assign array with gaps result in nil values
+replaceable_array = [1,3,5,7,9]
+replaceable_array[6] = 11
+print replaceable_array # 1,3,5,7,9,nil,11
+puts
+
+# replacing two elements
+replaceable_array[2,3] = 'dog' # [start, count]
+print replaceable_array # 1,3,dog,nil,11
+puts
+
+# insert element
+replaceable_array[3,0] = 'cat'
+print replaceable_array # 1,3,dog,cat,nil,11
+puts
+
+# replace with a collection of elements
+replaceable_array[3,1] = ['black cat', 'white cat']
+print replaceable_array # 1, 3, dog, black cat, white cat, nil, 11
+puts
+
+# remove elements
+replaceable_array[3,2] = []
+print replaceable_array # 1, 3, dog, nil, 11
+puts
