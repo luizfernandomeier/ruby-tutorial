@@ -51,3 +51,7 @@ puts
 # sequence loop
 ('a'..'z').each {|letter| print(letter, " ")}
 puts
+
+ # unless calls the action only if unless condition is false
+ puts 'unless test' unless false
+ 
