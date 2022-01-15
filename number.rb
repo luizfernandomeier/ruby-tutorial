@@ -4,3 +4,5 @@ printf("%0.100f\n", float_number) # shows the float imprecision
 
 puts float_number.to_i # 3
 puts float_number.to_i.class # Integer
+
+puts float_number += 1 # there is no ++ operator in Ruby
