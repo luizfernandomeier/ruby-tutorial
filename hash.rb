@@ -6,6 +6,7 @@ country_continent = {
   'Japan' => 'Asia',
 }
 puts country_continent
+puts country_continent.length # 4
 puts country_continent['Japan']
 
 # if you define a hash map with two identical keys, the last one is considered
