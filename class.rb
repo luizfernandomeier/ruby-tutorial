@@ -107,12 +107,10 @@ class SongList
 
   def delete_first
     @songs.shift
-    self
   end
 
   def delete_last
     @songs.pop
-    self
   end
 
   # implements an array like method on the class
