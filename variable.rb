@@ -6,6 +6,9 @@ local_name = "Meier"
 # constants must start with a capital letter and use CamelCase
 ConstantName = "this value can't be changed"
 
+# parallel assignment
+parallel1, parallel2 = 1, 2
+
 # in ruby, nil is an actual object
 nil_a = nil
 nil_b = nil
