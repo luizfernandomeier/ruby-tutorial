@@ -99,3 +99,11 @@ end
 
 # returns the first element that matches the condition
 puts replaceable_array.find{|element| element.to_s.length > 1} # dog
+
+# the difference between each and collect is that the former returns a new array
+puts ["H", "A", "L"].collect {|element| element.succ}
+
+# inject takes an initial value and performs an operation on each element
+# if no initial value is provided, the first element of the array is considered, and iteration begins on the second value
+puts [1,3,5,7].inject {|sum, element| sum + element} # 16
+puts [1,3,5,7].inject {|product, element| product * element} # 105
