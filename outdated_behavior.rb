@@ -1,5 +1,5 @@
 # TODO: this example is not working (page 76)
-# the b variable is being replaced by the block parameter
+# the b variable is not being replaced by the block parameter
 # maybe it is outdated
 a = [1, 2]
 b = 'cat'
