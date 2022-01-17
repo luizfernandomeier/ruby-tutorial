@@ -25,12 +25,12 @@ end
 puts "Forwarded sum result: #{sum_with_forwarding(1, 2)}"
 
 # identifies if a block was given
-def print_if_block_was_given()
+def print_if_block_was_given
   if block_given?
     puts 'Block given! :)'
   else
     puts 'No block given! :('
   end
 end
-print_if_block_was_given()
-print_if_block_was_given(){ }
+print_if_block_was_given
+print_if_block_was_given{ }
