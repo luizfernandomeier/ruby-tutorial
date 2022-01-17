@@ -25,3 +25,18 @@ puts "Hello #{'LUIZ'.downcase}!"
 
 # capitalize
 puts "Hello #{'LUIZ'.capitalize}!"
+
+# escape characters
+puts "\\ \"" # \ "
+puts '\'' # '
+
+# changing the string delimiter
+puts %q&Now the delimiter is \&& # single quoted string with & delimiter
+puts %(Now the delimiter is \(\)) # double quoted string with () delimiter
+
+# multiline string
+puts <<-TIME_TO_FINISH
+    Just some content
+  out of order
+...
+TIME_TO_FINISH
