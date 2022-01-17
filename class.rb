@@ -197,3 +197,29 @@ end
 full_safe = SafeClass.new
 full_safe.add_gold(100)
 SafeClass.new.print_gold_amount(full_safe)
+
+# closures
+class Button
+  def initialize(name, &action)
+    @name = name
+    @action = action
+    if @action == nil
+      @action = Proc.new { puts "No action defined" }
+    end
+  end
+
+  def click
+    @action.call
+  end
+end
+
+ok_button = Button.new("OK") { puts "OK button pressed" }
+ok_button.click
+
+# the local scope is available in the block
+some_local_scope_name = "Luiz"
+hello_button = Button.new("Hello") { puts "Hello #{some_local_scope_name}! Hello button pressed" }
+hello_button.click
+
+dummy_button = Button.new("Dummy")
+dummy_button.click
