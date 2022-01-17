@@ -15,5 +15,11 @@ show_welcome_message "Meier"
 def sum(a, b)
   a + b
 end
-
 puts "Sum result: #{sum(1, 2)}"
+
+# method that forwards whatever parameters it receives to another method
+# the name of the parameter is irrelevant: the * operator is whats matters
+def sum_with_forwarding(*args)
+  sum(*args)
+end
+puts "Forwarded sum result: #{sum_with_forwarding(1, 2)}"
