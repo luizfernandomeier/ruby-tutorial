@@ -223,3 +223,16 @@ hello_button.click
 
 dummy_button = Button.new("Dummy")
 dummy_button.click
+
+# lambda
+def concat_some_string(init_string)
+  lambda { |other_string| "#{init_string} #{other_string}" } # returns a Proc object
+end
+concat_hello = concat_some_string("Hello")
+puts concat_hello.call("World") # "Hello World"
+puts concat_hello.call("Luiz") # "Hello Luiz"
+
+def call_proc_parameter(proc_parameter) # receiving a Proc object
+  proc_parameter.call("from the inside")
+end
+puts call_proc_parameter(concat_hello) # "Hello from the inside"
