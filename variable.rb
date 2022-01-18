@@ -11,11 +11,15 @@ puts defined?(non_existing_variable) == nil
 
 # parallel assignment
 parallel1, parallel2 = 1, 2
+puts "#{parallel1} - #{parallel2}"
 
 # in ruby, nil is an actual object
 nil_a = nil
 nil_b = nil
 puts nil_a == nil_b # true
+
+# test for nil
+puts nil_a.nil? # true
 
 # variable references
 person1 = "Tim"
