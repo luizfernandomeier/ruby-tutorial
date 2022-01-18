@@ -40,3 +40,24 @@ puts <<-TIME_TO_FINISH
   out of order
 ...
 TIME_TO_FINISH
+
+# split
+print "Luiz|Fernando|Meier".split('|') # regular text
+puts
+first_name, middle_name, last_name = "Luiz|Fernando|Meier".split(/[|]/) # regex
+puts "#{first_name} - #{middle_name} - #{last_name}"
+
+# scan
+first_name, middle_name, last_name = "Luiz Fernando Meier".scan(/\w+/i) # trailing i ignores the case
+puts "#{first_name} : #{middle_name} : #{last_name}"
+
+# strip (trim)
+whitespaced_name = "     Luiz      "
+puts whitespaced_name.strip
+puts whitespaced_name
+puts whitespaced_name.strip! # the trailing ! indicates that the variable is changed itself
+puts whitespaced_name
+
+# squeeze
+whitespaced_name = "Luiz      Fernando"
+puts whitespaced_name.squeeze(" ") # replaces chunks of repeated characters for a single one
