@@ -107,3 +107,6 @@ puts ["H", "A", "L"].collect {|element| element.succ}
 # if no initial value is provided, the first element of the array is considered, and iteration begins on the second value
 puts [1,3,5,7].inject {|sum, element| sum + element} # 16
 puts [1,3,5,7].inject {|product, element| product * element} # 105
+
+# check if an array contains a value
+puts ["Luiz", "Fernando"].index("Meier").nil? # true
