@@ -48,13 +48,13 @@ puts
 5.upto(7) {|i| print(i, " ")}
 puts
 
-# sequence loop
+# range loop
 ('a'..'z').each {|letter| print(letter, " ")}
 puts
 
- # unless calls the action only if unless condition is false
- puts 'unless test' unless false
- 
- # step loop
- 10.step(20, 2) {|i| print(i, " ")} # 10 12 14 16 18 20
- puts
+# unless calls the action only if unless condition is false
+puts 'unless test' unless false
+
+# step loop
+10.step(20, 2) {|i| print(i, " ")} # 10 12 14 16 18 20
+puts
