@@ -236,3 +236,12 @@ def call_proc_parameter(proc_parameter) # receiving a Proc object
   proc_parameter.call("from the inside")
 end
 puts call_proc_parameter(concat_hello) # "Hello from the inside"
+
+# override inspect method
+class VU
+  def inspect
+    "New inspect! ID:  #{self.object_id}"
+  end
+end
+
+puts VU.new.inspect
