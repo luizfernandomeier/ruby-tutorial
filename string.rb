@@ -3,7 +3,7 @@
 # here the \n is not interpreted
 puts 'This is a very \nstrange line'
 
-# looks for substitutions
+# looks for escape substitutions
 puts "This is a very \nlong line"
 
 # looks for expression interpolations
