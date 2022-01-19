@@ -59,3 +59,14 @@ end
 
 # between is a method of Comparable module
 puts VU.new(2).between?(VU.new(1), VU.new(3)) # true
+# simpler way to check between
+puts (VU.new(1)..VU.new(3)) === VU.new(2) # true
+puts (VU.new(1)...VU.new(3)) === VU.new(3) # false
+
+# ranges as conditions
+('a'..'z').each do |letter|
+  print(letter, " ") if letter =~ /b/ .. letter =~ /g/
+  print(letter, " ") if letter == 'b' .. letter == 't'
+  print '| ' # the loop continues
+end
+# | b b | c c | d d | e e | f f | g g | h | i | j | k | l | m | n | o | p | q | r | s | t | | | | | | | 
