@@ -100,7 +100,7 @@ end
 # returns the first element that matches the condition
 puts replaceable_array.find{|element| element.to_s.length > 1} # dog
 
-# the difference between each and collect is that the former returns a new array
+# the difference between each and collect is that collect returns a new array
 puts ["H", "A", "L"].collect {|element| element.succ}
 
 # inject takes an initial value and performs an operation on each element
