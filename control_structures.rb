@@ -58,3 +58,32 @@ puts 'unless test' unless false
 # step loop
 10.step(20, 2) {|i| print(i, " ")} # 10 12 14 16 18 20
 puts
+
+# case
+def negative_message(number)
+  case
+  when number > 0
+    "The number is positive"
+  when number == 0
+    "The number is zero"
+  else
+    "The number is negative"
+  end
+end
+puts negative_message(-10)
+puts negative_message(10)
+
+# case with parameter
+def number_name(number)
+  case number
+  when  1
+    "the number one"
+  when 2..10
+    "a number between 2 and 10"
+  else
+    "a number greater than 10"
+  end
+end
+puts number_name(1)
+puts number_name(5)
+puts number_name(11)
