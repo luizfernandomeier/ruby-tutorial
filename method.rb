@@ -1,5 +1,6 @@
 # method and argument names must use lowercase letters and underscores (snake_case)
 # method names can also end with the characters =, ! or ?
+# there is no method overloading in ruby
 
 # method with default argument
 def show_welcome_message(name, year=2010)
@@ -34,3 +35,42 @@ def print_if_block_was_given
 end
 print_if_block_was_given
 print_if_block_was_given{ }
+
+# multiple return values
+def multiple_return_values
+  # explicit return is needed to return multiple values
+  return "luiz", "fernando", "meier"
+end
+print multiple_return_values
+puts
+first, second, third = multiple_return_values
+puts "First: #{first}, Second: #{second}, Third: #{third}"
+
+# array to multiple arguments
+def five (a, b, c, d, e)
+  puts "a: #{a}, b: #{b}, c: #{c}, d: #{d}, e: #{e}"
+end
+five(1, 2, *[3, 4, 5])
+
+# if the last parameter is preceded by an &, it is a Proc object
+def calc(&block)
+  print (1..10).collect(&block)
+  puts
+end
+sum = lambda { |x| x + x }
+subtract = lambda { |x| x - x }
+multiply = lambda { |x| x * x }
+divide = lambda { |x| x / x }
+calc(&sum)
+calc{ |x| x + x }
+calc(&subtract)
+calc(&multiply)
+calc(&divide)
+
+# hash arguments
+def hash_arguments(name, options)
+  puts "Name: #{name}, Options: #{options}"
+end
+# both calls return the same result
+hash_arguments("Luiz", { :age => 33, :height => 178 })
+hash_arguments("Luiz", :age => 33, :height => 178 ) # :arguments are called symbols - its purpose is to make it clear what is being passed is a name
