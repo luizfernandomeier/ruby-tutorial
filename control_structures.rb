@@ -59,7 +59,7 @@ puts 'unless test' unless false
 10.step(20, 2) {|i| print(i, " ")} # 10 12 14 16 18 20
 puts
 
-# case
+# case (switch)
 def negative_message(number)
   case
   when number > 0
