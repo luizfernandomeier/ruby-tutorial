@@ -74,3 +74,38 @@ end
 # both calls return the same result
 hash_arguments("Luiz", { :age => 33, :height => 178 })
 hash_arguments("Luiz", :age => 33, :height => 178 ) # :arguments are called symbols - its purpose is to make it clear what is being passed is a name
+
+# operators are in fact just methods - the two lines below are the same
+puts 2*2+1
+puts 2.*(2).+(1)
+
+# destroying arithmetic - it is possible to redefine even the most fundamental operators
+class Integer
+  alias old_plus + # alias references the original method
+
+  def +(other)
+    self.*(other)
+  end
+end
+puts 3 + 3 # not this is 9
+puts 3.old_plus(3) # this is still 6
+
+# fixing mathematics
+class Integer
+  def +(other)
+    self.old_plus(other)
+  end
+end
+puts 3 + 3 # it's 6 again
+
+# defining [] method
+class ArrayCapableClass
+  def initialize(name)
+    @name = name
+  end
+  def [](index, size)
+    @name[index, size]
+  end
+end
+
+puts ArrayCapableClass.new("Fernando")[2,3] # rna
