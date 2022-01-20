@@ -52,3 +52,10 @@ begin
 rescue
   puts "Can't modify frozen string"
 end
+
+# test object type
+def string?(object)
+  object::String
+end
+
+puts string?("Hello") # true
