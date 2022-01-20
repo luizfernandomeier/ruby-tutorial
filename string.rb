@@ -62,5 +62,8 @@ puts whitespaced_name
 whitespaced_name = "Luiz      Fernando"
 puts whitespaced_name.squeeze(" ") # replaces chunks of repeated characters for a single one
 
-#join
+# join
 puts ["luiz", "fernando", "meier"].join('||')
+
+# substring
+puts "luiz"[2,2]
