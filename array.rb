@@ -110,3 +110,11 @@ puts [1,3,5,7].inject {|product, element| product * element} # 105
 
 # check if an array contains a value
 puts ["Luiz", "Fernando"].index("Meier").nil? # true
+
+# sort
+print [2,1,8,4,8,6,4,1].sort # [1, 1, 2, 4, 4, 6, 8, 8]
+puts
+
+# sort reverse
+print [2,1,8,4,8,6,4,1].sort.reverse # [8, 8, 6, 4, 4, 2, 1, 1]
+puts
