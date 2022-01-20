@@ -87,3 +87,11 @@ end
 puts number_name(1)
 puts number_name(5)
 puts number_name(11)
+
+# traditional expressions also return values
+test_result = if 1<0
+                "The test was true"
+              else
+                "The test was false"
+              end
+puts test_result
