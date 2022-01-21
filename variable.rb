@@ -53,9 +53,14 @@ rescue
   puts "Can't modify frozen string"
 end
 
-# test object type
-def string?(object)
-  object::String
-end
+# TODO test object type
+# def string?(object)
+#   object::String
+# end
+# puts string?("Hello") # true
 
-puts string?("Hello") # true
+# the right side is evaluated first, so this change is possible
+a, b = 1, 2
+puts "a: #{a}, b: #{b}"
+a, b = b, a
+puts "a: #{a}, b: #{b}"
