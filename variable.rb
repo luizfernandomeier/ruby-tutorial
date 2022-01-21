@@ -1,3 +1,5 @@
+# false / true - any value that is not nil or false is true - 0 is true
+
 # variable names must use lowercase letters and underscores (snake_case)
 $global_name = "Luiz"
 @instance_name = "Fernando"
@@ -64,3 +66,40 @@ a, b = 1, 2
 puts "a: #{a}, b: #{b}"
 a, b = b, a
 puts "a: #{a}, b: #{b}"
+
+# comparison operators
+puts 1 == 1.0 # true
+puts 1.eql?(1.0) # false - different types
+
+class IdTest
+  attr_reader :id
+  def initialize(id)
+    @id = id
+  end
+  def ==(other)
+    @id == other.id
+  end
+end
+a = IdTest.new(1)
+b = IdTest.new(1)
+puts a == b # true
+puts a.eql?(b) # false - same type # TODO when is this true?
+puts a.equal?(b) # false - different id's
+
+# nvl, isnull, ifnull
+a = 1
+a ||= 2 # same as a = a || 2
+puts a # 1
+
+b = nil
+b ||= 2
+puts b # 2
+
+# append <<
+puts "Hello" << " " << "World" # Hello World
+print [] << 1 << 2 << 3 # [1, 2, 3]
+puts
+
+# bitwise operators << >>
+puts 2 << 3 # 16 - left shift - 00010 -> 10000
+puts 16 >> 2 # 4 - right shift - 10000 -> 00100
