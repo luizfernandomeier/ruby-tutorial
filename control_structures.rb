@@ -7,8 +7,27 @@ else
   puts "But this will"
 end
 
+# in one line needs the then or ":" keyword
+if 1 > 2 then puts "This won't be printed"
+else puts "But this will"
+end
+
+## if 1 > 2: puts "This won't be printed" # TODO: this was supposed to work? page 119
+## else puts "But this will"
+## end
+
 # if with statement modifier
 puts "But this will - short version" if 2 > 1
+
+# negated if
+unless 1 > 2 then puts "This will be printed"
+end
+
+# shorter negated if
+puts "This will be printed" unless 1 > 2
+
+# ternary operator
+puts 1 > 2 ? "1 is greater than 2" : "1 is not greater than 2"
 
 # classic while loop
 i = 0
@@ -35,6 +54,15 @@ while get_nil_if_zero(i)
   i -= 1
 end
 puts i
+
+# until loop
+
+i = 0
+until i == 10
+  print "#{i} "
+  i += 1
+end
+puts
 
 # each loop
 animals = ['cat', 'dog']
@@ -75,9 +103,8 @@ puts negative_message(10)
 
 # case with parameter
 def number_name(number)
-  case number
-  when  1
-    "the number one"
+  case number # comparison is done using ===
+  when  1 then "the number one"
   when 2..10
     "a number between 2 and 10"
   else
@@ -95,3 +122,70 @@ test_result = if 1<0
                 "The test was false"
               end
 puts test_result
+
+# begin end while blocks always execute at least once
+puts "Hello!" while false
+begin
+  puts "Goodbye!"
+end while false
+
+# infinite loop
+loop do
+  puts "This will not be printed forever"
+  break
+end
+
+# for differs from .each in tems of variable scope
+[0,1,2].each do |i|
+  local_each_var = i
+end
+begin
+  puts "local_each_var is defined: #{local_each_var}"
+rescue
+  puts "local_each_var does not exist"
+end
+
+for i in [0,1,2]
+  local_for_var = i
+end
+puts "local_for_var is defined: #{local_for_var}"
+
+# break - exists a block
+print 'break - '
+for i in [0,1,2]
+  break if i == 1
+  print i, ' '
+end
+puts
+
+# redo - re-executes the current iteration
+print 'redo - '
+for i in [0,1,2]
+  if i == 1
+    i = 10
+    redo
+  end
+  print i, ' '
+end
+puts
+
+# next - skips the current iteration
+print 'next - '
+for i in [0,1,2]
+  next if i == 1
+  print i, ' '
+end
+puts
+
+# retry - re-executes the whole loop - only works on a rescue block #TODO - VERSION
+# apparently this is not supported anymore
+# print 'retry - '
+# retry_loop = true
+# for i in [0,1,2]
+#   if i == 1 && retry_loop
+#     raise "This is an error"
+#     retry
+#   end
+#   print i, ' '
+# end
+# puts
