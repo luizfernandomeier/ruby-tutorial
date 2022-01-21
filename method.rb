@@ -98,17 +98,23 @@ class Integer
 end
 puts 3 + 3 # it's 6 again
 
-# defining [] method
-class ArrayCapableClass
+# defining unconventional methods - [], +, etc
+class NewOperatorClass
   def initialize(name)
     @name = name
   end
   def [](index, size)
     @name[index, size]
   end
+  def +(other)
+    @name + other.to_s
+  end
 end
 
-puts ArrayCapableClass.new("Fernando")[2,3] # rna
+puts NewOperatorClass.new("Fernando")[2,3] # rna
+newOperator = NewOperatorClass.new("Fernando")
+newOperator += " Meier"
+puts newOperator # Fernando Meier
 
 # assigning methods always return the value they received
 class SetterTest
