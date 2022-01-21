@@ -109,3 +109,13 @@ class ArrayCapableClass
 end
 
 puts ArrayCapableClass.new("Fernando")[2,3] # rna
+
+# assigning methods always return the value they received
+class SetterTest
+  def setter=(value)
+    @value = value
+    return 2
+  end
+end
+setter = SetterTest.new.setter = "Luiz"
+print setter # Luiz
