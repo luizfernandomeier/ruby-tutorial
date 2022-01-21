@@ -4,8 +4,7 @@ puts output.class
 print output
 puts
 
-# puts Kernel.`("date")
-puts Kernel.`("date").class
+# puts Kernel.`("date") # same as above
 
 # output of the command
 puts $?
