@@ -245,3 +245,18 @@ class VU
 end
 
 puts VU.new.inspect
+
+# defining each method
+class Seasons
+  def each
+    yield "Spring"
+    yield "Summer"
+    yield "Autumn"
+    yield "Winter"
+  end
+end
+
+for season in Seasons.new
+  print season, " "
+end
+puts
