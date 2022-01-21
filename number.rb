@@ -28,3 +28,6 @@ puts -10.abs # 10
 # cast is needed before performing math operations
 puts "1" + "2" # "12"
 puts "1".to_i + "2".to_i # 3
+
+# test zero value
+puts 0.zero?
