@@ -69,4 +69,9 @@ puts (VU.new(1)...VU.new(3)) === VU.new(3) # false
   print(letter, " ") if letter == 'b' .. letter == 't'
   print '| ' # the loop continues
 end
+puts
 # | b b | c c | d d | e e | f f | g g | h | i | j | k | l | m | n | o | p | q | r | s | t | | | | | | | 
+
+# find_all (enumerable)
+print (VU.new(1)..VU.new(3)).find_all {|vu| vu.volume > 1}.collect {|vu| vu.volume} # 2,3
+puts
