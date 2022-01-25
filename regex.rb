@@ -8,6 +8,10 @@ puts /[1-9]+/.match(text) # 123
 print text.scan(regex)
 puts
 
+# if a group is specified, it gets only that content
+puts "<title>Google</title>".scan(/<title>(.*)<\/title>/) # Google
+puts "<title>Google</title>".scan(/<title>.*<\/title>/) # <title>Google</title>
+
 # special regex match operator
 if text =~ regex
   puts "match: #{text}"
