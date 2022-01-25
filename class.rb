@@ -54,6 +54,12 @@ class Song
   def to_s
     "Song: #@name--#@artist (#@duration_seconds seconds)"
   end
+
+  class << self # everything inside class << self is going to be static
+    def some_class_method
+      print "some_class_method"
+    end
+  end
 end
 
 bits_of_parrots = Song.new("Bits of Parrots", "Enemiez", 244)
@@ -76,6 +82,7 @@ puts bits_of_parrots.duration_seconds # 330
 puts bits_of_parrots.get_plays # 2
 puts bits_of_parrots_radio_edit.get_plays # 4
 puts Song.get_total_plays # 6
+puts Song.some_class_method # some_class_method
 
 # inheritance
 class KaraokeSong < Song
