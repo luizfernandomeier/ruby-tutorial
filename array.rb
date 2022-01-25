@@ -37,7 +37,7 @@ puts multitype_array[1]
 multitype_array << "new element"
 puts multitype_array[multitype_array.length-1]
 
-# array creation shortcut - just works with strings
+# array creation shortcut - just works with strings (shortcut notation)
 shortcut_array = %w{one two three}
 puts shortcut_array
 
