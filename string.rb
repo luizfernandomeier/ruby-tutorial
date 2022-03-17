@@ -67,3 +67,6 @@ puts ["luiz", "fernando", "meier"].join('||')
 
 # substring
 puts "luiz"[2,2]
+
+# replace
+puts "luis".gsub('s', 'z') # luiz
